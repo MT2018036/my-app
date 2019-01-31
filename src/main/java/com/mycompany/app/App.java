@@ -1,44 +1,50 @@
 package com.mycompany.app;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main(String[] args) throws IOException
-	{
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("Enter Operation:\n1.Add\n2.Subtract\n3.Multiply\n4.Divide\n5.Modulus");
-		int n = Integer.parseInt(br.readLine());
-		int result = 0;
-		int x = 0;
-		int y = 0;
-		System.out.println("Enter First Number");
-		x = Integer.parseInt(br.readLine());
-		System.out.println("Enter Secong Number");
-		y = Integer.parseInt(br.readLine());
-		switch (n)
-		{
-			case 1:
-			result = x + y;
-			break;
-			case 2:
-			result = x - y; //Added By Subtract 
-			break;
-			case 3:
-			result = x * y; //Added by Multiply
-			break;
-			case 4:
-			result = x / y; //Added by Divide
-			case 5:
-			result = x % y; //Added by Mod
-			break;
-			default:
-			System.out.println("Invalid Choice");	
+import java.util.Scanner;
+public class App{
+	public static void main(String args[]) {
+	float a,b,res;
+	char choice,ch;
+	Scanner scan = new Scanner(System.in);
+	
+	do{
+	System.out.print("1, Add two no.s\n");
+	System.out.print("2, Sub two no.s\n");
+	System.out.print("3, Mult two no.s\n");
+	System.out.print("4. Exit\n\n");
+	System.out.print("Enter ur choice\n");
+	choice=scan.next().charAt(0);
+	switch(choice){
+	
+		case '1' : System.out.print("Enter 2 nos.");
+		a=scan.nextFloat();
+		b=scan.nextFloat();
+		res=a+b;
+		System.out.print("Result ="+res);
+		break;
+		
+		case '2' : System.out.print("Enter 2 nos.");
+		a=scan.nextFloat();
+		b=scan.nextFloat();
+		res=a-b;
+		System.out.print("Result ="+res);
+		break;
 
+		case '3' : System.out.print("Enter 2 nos.");
+		a=scan.nextFloat();
+		b=scan.nextFloat();
+		res=a*b;
+		System.out.print("Result ="+res);
+		break;
+		
+		case '4' : System.exit(0);
+		break;
+		
+		default: System.out.print("Invalid choice ");
+		break;
+		
 		}
-		System.out.println("Answer:" + result);	
-		//Testing for merge showing up on Github		
+		System.out.print("\n----------------------");
+	}while(choice!=4);
 }
 }
